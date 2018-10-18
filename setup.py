@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="megapy",
-    version="0.0.5",
+    version="0.0.6",
     author="Aakash Sahai",
     author_email="sahaiaakash@gmail.com",
     description=" A Python package to control Arduino Mega over USB Serial",

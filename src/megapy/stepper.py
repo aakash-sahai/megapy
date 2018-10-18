@@ -24,9 +24,6 @@ class Stepper(ArduinoObject):
     def _get_dir(self):
         return int(super(Stepper, self).get("dir"))
 
-    def _set_dir(self, value):
-        return super(Stepper, self).set("dir", value)
-
     def _get_stepsperrev(self):
         return int(super(Stepper, self).get("stepsperrev"))
 
@@ -35,9 +32,6 @@ class Stepper(ArduinoObject):
 
     def _get_stepsremaining(self):
         return int(super(Stepper, self).get("stepsremaining"))
-
-    def _set_stepsremaining(self, value):
-        return super(Stepper, self).set("stepsremaining", value)
 
     def rotate(self, degrees):
         return super(Stepper, self).do("rotate " + str(degrees))
@@ -56,6 +50,6 @@ class Stepper(ArduinoObject):
 
     rpm = property(_get_rpm, _set_rpm)
     microsteps = property(_get_microsteps, _set_microsteps)
-    dir = property(_get_dir, _set_dir)
     stepsperrev = property(_get_stepsperrev, _set_stepsperrev)
-    stepsremaining = property(_get_stepsremaining, _set_stepsremaining)
+    dir = property(_get_dir)
+    stepsremaining = property(_get_stepsremaining)
