@@ -42,7 +42,9 @@ class ArduinoConnection(object):
             fmt = '  {{ "name" : "{}" , "description" : "{}" , "manufacturer" : "{}" , "serial" : "{}" , "device" : "{}" }},'
             print(fmt.format(p.name, p.description, p.manufacturer, p.serial_number, p.device))
             if selected is None:
-                if p.description.find('Arduino') != -1 or p.manufacturer.find('Arduino') != -1:
+                if p.description.find('Arduino') != -1 or \
+                  p.manufacturer.find('Arduino') != -1 or \
+                  p.manufacturer.find('FTDI') != -1:
                     selected = p
         print(']')
 

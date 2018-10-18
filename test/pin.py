@@ -1,8 +1,14 @@
 from megapy import *
 import time
+import sys
 
 if __name__ == "__main__":
-    conn = ArduinoConnection()
+    device = None
+    try:
+        device = sys.argv[1]
+    except:
+        pass
+    conn = ArduinoConnection(device)
     conn.flush()
     conn.ping()
     pin = DigitalPin(conn, 13, mode = 'output')

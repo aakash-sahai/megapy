@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="megapy",
-    version="0.0.3",
+    version="0.0.5",
     author="Aakash Sahai",
     author_email="sahaiaakash@gmail.com",
     description=" A Python package to control Arduino Mega over USB Serial",
@@ -19,4 +19,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    install_requires=['pyserial>=3.4']
 )

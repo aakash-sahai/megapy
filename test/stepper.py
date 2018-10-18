@@ -1,7 +1,13 @@
 from megapy import *
+import sys
 
 if __name__ == "__main__":
-    conn = ArduinoConnection()
+    device = None
+    try:
+        device = sys.argv[1]
+    except:
+        pass
+    conn = ArduinoConnection(device)
     conn.flush()
     conn.ping()
     s1 = Stepper(conn, 1)
